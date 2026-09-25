@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Onboarding from "./pages/Onboarding";
+import Dashboard from "./pages/Dashboard";
+import { PlanningPreviewProvider } from "./contexts/PlanningPreview";
 
 const queryClient = new QueryClient();
 
@@ -14,13 +16,16 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/datos" element={<Onboarding />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <PlanningPreviewProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/datos" element={<Onboarding />} />
+            <Route path="/inicio" element={<Dashboard />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </PlanningPreviewProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

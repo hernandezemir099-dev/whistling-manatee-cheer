@@ -26,6 +26,9 @@
     --radius: 0.85rem;
     --warning: 38 83% 95%;
     --warning-foreground: 30 61% 30%;
+    --chart-muted: 170 13% 49%;
+    --chart-mint: 152 30% 48%;
+    --chart-amber: 35 58% 52%;
   }
   * { @apply border-border; }
   body { @apply bg-background text-foreground antialiased; }
